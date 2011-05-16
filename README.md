@@ -5,6 +5,7 @@ It's [Tipsy](https://github.com/jaz303/tipsy) -- for Ender! Yep, the old-school 
 		$ ender add ender-tipsy
 
 Use it:
+
 ``` js
 $('#content a').tipsy(options);
 ```
