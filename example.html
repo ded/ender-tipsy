@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>tipsy example</title>
+		<link rel="stylesheet" href="tipsy.css" type="text/css">
+		<style type="text/css" media="screen">
+			html,body {
+				font: 16px helvetica neue;
+				margin: 0;
+				padding: 0;
+			}
+			#doc {
+				width: 500px;
+				margin: 0 auto;
+			}
+			h1 {
+				font-weight: 100;
+				font-size: 30px;
+			}
+		</style>
+		<script src="ender.js" type="text/javascript"></script>
+		<script src="ender.tipsy.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="doc">
+			<h1>Tipsy Example</h1>
+			<p>hello this is tipsy: traveling from the
+				<a class="n" href="#" title="Booshology is the study of boosh">north</a>
+				<a class="s" href="#" title="Bluology is the study of blue">south</a>
+				<a class="e" href="#" title="Lolipology is the study of lolipops">east</a> and
+				<a class="w" href="#" title="Ralphology is the study of ralphs">west</a>
+			</p>
+		</div>
+		<script type="text/javascript">
+				$('a').tipsy({
+					offset: 10,
+					gravity: function () {
+						return this.className
+					},
+					fade: 500
+				});
+		</script>
+	</body>
+</html>

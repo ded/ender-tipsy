@@ -1,0 +1,15 @@
+{
+  "name": "ender-tipsy",
+  "description": "Tipsy for Ender",
+  "version": "0.0.1",
+  "authors": ["Jason Frame", "Dustin Diaz <@ded>"],
+  "keywords": ["ender", "tipsy", "ui", "tooltip"],
+  "homepage": "https://github.com/ded/ender-tipsy",
+  "dependencies": {
+    "qwery": ">= 1.1.0",
+    "bonzo": ">= 0.5.0",
+    "bean": ">= 0.1.4",
+		"ender-tween": ">= 0.0.5"
+  },
+  "ender": "noop"
+}
