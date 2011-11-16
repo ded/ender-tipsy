@@ -6,7 +6,7 @@
   * released under the MIT license
   */
 
-(function ($) {
+!function ($) {
 
   var fn = {};
 
@@ -257,4 +257,4 @@
     }
   };
   $.ender(fn, true);
-})(ender);
+}(ender);
