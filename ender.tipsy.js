@@ -38,7 +38,12 @@
       if (title && this.enabled) {
         var $tip = this.tip();
 
-        $tip.find('.tipsy-inner')[this.options.html ? 'html' : 'text'](title);
+        if (typeof title == 'string') {
+          $tip.find('.tipsy-inner')[this.options.html ? 'html' : 'text'](title);
+        } else {
+          $tip.find('.tipsy-inner').empty().append(title);
+        }
+
         $tip[0].className = 'tipsy';
         $tip.remove()
         .css({
@@ -125,7 +130,9 @@
       } else if (typeof o.title == 'function') {
         title = o.title.call($e[0]);
       }
-      title = ('' + title).replace(/(^\s*|\s*$)/, "");
+      if (typeof title == 'string') {
+        title = ('' + title).replace(/(^\s*|\s*$)/, "");
+      }
       return title || o.fallback;
     },
 
