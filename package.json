@@ -1,7 +1,7 @@
 {
   "name": "ender-tipsy",
   "description": "Tipsy for Ender",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "authors": ["Jason Frame", "Dustin Diaz <@ded>"],
   "keywords": ["ender", "tipsy", "ui", "tooltip"],
   "homepage": "https://github.com/ded/ender-tipsy",
