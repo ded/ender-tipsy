@@ -56,30 +56,33 @@
 
         var pos = extend({}, this.$element.offset());
 
-        var actualWidth = $tip.width(),
-        actualHeight = $tip.height(),
-        gravity = maybeCall(this.options.gravity, this.$element[0]);
+        var tipWidth = $tip.offset().width,
+            tipHeight = $tip.offset().height,
+            gravity = maybeCall(this.options.gravity, this.$element[0]);
+        
+        // Tip position CSS. Center based on element height/width and tip height/width.
         var tp;
+        
         switch (gravity.charAt(0)) {
           case 'n':
-          tp = {top: pos.top + pos.height + this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};
-          break;
+            tp = {top: pos.top + pos.height + this.options.offset, left: pos.left + pos.width / 2 - tipWidth / 2};
+            break;
           case 's':
-          tp = {top: pos.top - actualHeight - this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};
-          break;
+            tp = {top: pos.top - tipHeight - this.options.offset, left: pos.left + pos.width / 2 - tipWidth / 2};
+            break;
           case 'e':
-          tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth - this.options.offset};
-          break;
+            tp = {top: pos.top + pos.height / 2 - tipHeight / 2, left: pos.left - tipWidth - this.options.offset};
+            break;
           case 'w':
-          tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width + this.options.offset};
-          break;
+            tp = {top: pos.top + pos.height / 2 - tipHeight / 2, left: pos.left + pos.width + this.options.offset};
+            break;
         }
 
         if (gravity.length == 2) {
           if (gravity.charAt(1) == 'w') {
             tp.left = pos.left + pos.width / 2 - 15;
           } else {
-            tp.left = pos.left + pos.width / 2 - actualWidth + 15;
+            tp.left = pos.left + pos.width / 2 - tipWidth + 15;
           }
         }
         $tip.css(tp).addClass('tipsy-' + gravity);
